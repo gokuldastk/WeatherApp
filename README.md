@@ -62,6 +62,35 @@ The app fetches weather data from an API and presents it in a clean, modern, and
 
 ---
 
+## Setup Instructions
+
+- **Clone the repository**  
+  - git clone https://github.com/gokuldastk/WeatherApp.git
+  - cd WeatherApp
+ 
+- **Open the project in Xcode**
+  - open WeatherApp.xcodeproj
+ 
+- **Open the project in Xcode**
+  - Open APIManager.swift and insert your API key for the weather service you are using.
+ 
+- **Run the app**
+  - Select a simulator or a real device (location access is required).
+  - Press Run (⌘ + R) in Xcode.
+
+---
+
+## Assumptions & Limitations
+
+- Assumes the user grants location permission; otherwise, weather cannot be fetched.
+- Currently supports fetching weather only for the current location.
+- The app fetches only current weather conditions; multi-day forecasts are not implemented.
+- Network errors are displayed as a generic error message; detailed error handling may be added in future updates.
+- The UI is designed for portrait orientation; landscape support is minimal.
+
+
+---
+
 ## Author
 
 **Gokul Das T K**  
