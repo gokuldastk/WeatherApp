@@ -16,11 +16,14 @@ class WeatherViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
     
-    private let apiManager: APIManager
-    private let locationManager = LocationHandler.shared
+    private let apiManager: APIManaging
+    private let locationManager: LocationHandling
     
-    init(apiManager: APIManager = APIManager()) {
+    init(apiManager: APIManaging = APIManager(),
+         locationHandler: LocationHandling = LocationHandler.shared) {
+        
         self.apiManager = apiManager
+        self.locationManager = locationHandler
     }
     
     func fetchWeather() async {
@@ -40,7 +43,7 @@ class WeatherViewModel: ObservableObject {
         
         switch result {
         case .success(let data):
-            self.weather = data as? WeatherResponse
+            self.weather = data
         case .failure(let error):
             self.errorMessage = error
         }

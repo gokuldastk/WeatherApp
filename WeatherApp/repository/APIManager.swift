@@ -11,15 +11,16 @@ enum API {
     private static let apiKey = "55a496a4933a4b50965124601251411"
 
     case weatherInfo(lat: Double, lon: Double)
-  //  case weatherByCity(String)
+    case weatherByCity(String)
 
     var urlString: String {
         switch self {
         case .weatherInfo(let lat, let lon):
             return "https://api.weatherapi.com/v1/current.json?key=\(API.apiKey)&q=\(lat),\(lon)&aqi=no"
 
-//        case .weatherByCity(let city):
-//            return "https://api.weatherapi.com/v1/current.json?key=\(API.apiKey)&q=\(city)&aqi=no"
+        //this api is not in use just for sample
+        case .weatherByCity(let city):
+            return "https://api.weatherapi.com/v1/current.json?key=\(API.apiKey)&q=\(city)&aqi=no"
         }
     }
     
@@ -29,11 +30,16 @@ enum API {
 }
 
 enum ApiResult {
-    case success(Codable)
+    case success(WeatherResponse)
     case failure(String)
 }
 
-class APIManager {
+protocol APIManaging {
+    func fetchWeatherInfo(for lat: Double, lon: Double) async -> ApiResult
+}
+
+
+final class APIManager: APIManaging {
     
     private var apiClient: NetworkClient!
     
@@ -57,6 +63,6 @@ class APIManager {
         case .failure(let errorString):
             return .failure(errorString)
         }
-        
+
     }
 }

@@ -16,7 +16,7 @@ protocol NetworkClient {
     func get(api: API) async -> HttpResult
 }
 
-class HttpClient: NetworkClient {
+final class HttpClient: NetworkClient {
     
     func get(api: API) async -> HttpResult {
         

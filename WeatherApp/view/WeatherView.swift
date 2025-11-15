@@ -5,68 +5,6 @@
 //  Created by Gokul on 14/11/25.
 //
 
-
-//import SwiftUI
-//
-//struct WeatherView: View {
-//    
-//    @StateObject private var viewModel = WeatherViewModel()
-//    
-//    var body: some View {
-//        VStack(spacing: 20) {
-//            
-//            if viewModel.isLoading {
-//                ProgressView("Loading weather...")
-//            }
-//            
-//            if let error = viewModel.errorMessage {
-//                Text(error)
-//                    .foregroundColor(.red)
-//            }
-//            
-//            if let weather = viewModel.weather {
-//                VStack(spacing: 10) {
-//                    Text(weather.location.name)
-//                        .font(.largeTitle)
-//                        .bold()
-//                    
-//                    Text("\(weather.current.temp_c, specifier: "%.1f")°C")
-//                        .font(.system(size: 50))
-//                        .bold()
-//                    
-//                    Text(weather.current.condition.text)
-//                        .font(.title3)
-//                        .foregroundColor(.gray)
-//                    
-//                    Text("Wind: \(weather.current.wind_kph, specifier: "%.0f") kph")
-//                    Text("Humidity: \(weather.current.humidity)%")
-//                }
-//                .padding()
-//            }
-//            
-//            Button(action: {
-//                Task { await viewModel.fetchWeather() }
-//            }) {
-//                Text("Refresh")
-//                    .padding()
-//                    .frame(maxWidth: .infinity)
-//                    .background(Color.blue.opacity(0.8))
-//                    .foregroundColor(.white)
-//                    .cornerRadius(12)
-//            }
-//            .padding(.horizontal)
-//            
-//            Spacer()
-//        }
-//        .padding()
-//        .task {
-//            await viewModel.fetchWeather()
-//        }
-//    }
-//}
-
-
-
 import SwiftUI
 
 struct WeatherView: View {

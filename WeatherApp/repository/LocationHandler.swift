@@ -8,7 +8,17 @@
 import Foundation
 import CoreLocation
 
-final class LocationHandler: NSObject, ObservableObject {
+protocol LocationHandling {
+    func requestPermission()
+    func requestLocation()
+    func getCurrentLocation() async -> CLLocation?
+    
+    var location: CLLocation? { get }
+    var authorizationStatus: CLAuthorizationStatus { get }
+    var locationError: String? { get }
+}
+
+final class LocationHandler: NSObject, ObservableObject, LocationHandling {
     
     static let shared = LocationHandler()
     
