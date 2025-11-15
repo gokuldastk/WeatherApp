@@ -1,4 +1,4 @@
-# WeatherApp 🌤️
+# WeatherApp 
 
 **WeatherApp** is a simple iOS application built with **Swift** and **SwiftUI** that provides real-time weather updates for your current location.  
 The app fetches weather data from an API and presents it in a clean, modern, and user-friendly interface.
