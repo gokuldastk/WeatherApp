@@ -31,7 +31,7 @@ The app fetches weather data from an API and presents it in a clean, modern, and
 
 - **MVVM Pattern**  
   - **Model:** `WeatherResponse` represents the weather data returned by the API.  
-  - **ViewModel:** `WeatherViewModel` handles fetching weather data, managing UI state (loading, error messages), and exposing observable properties to the views.  
+  - **ViewModel:** `WeatherViewModel` handles fetching weather data using APIManager, where we decode the data obtained from HTTTP Client(which is the raw data) to a stuctured manner , managing UI state (loading, error messages), and exposing observable properties to the views.  
   - **View:** SwiftUI views present the weather information dynamically based on the state provided by the ViewModel.
 
 - **Dependency Injection**  
@@ -53,7 +53,7 @@ The app fetches weather data from an API and presents it in a clean, modern, and
 
 ## Technologies Used
 
-- Swift 5.9+  
+- Swift   
 - SwiftUI  
 - CoreLocation  
 - URLSession  
