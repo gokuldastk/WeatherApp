@@ -49,6 +49,10 @@ The app fetches weather data from an API and presents it in a clean, modern, and
   - Clear separation between UI, business logic, and data.  
   - Easy to read, maintain, and extend for future features.
 
+- ** Diagram**
+  - <img width="2588" height="1884" alt="image" src="https://github.com/user-attachments/assets/c390a4a6-730d-4c90-8592-44e9355dbcab" />
+
+
 ---
 
 ## Technologies Used
